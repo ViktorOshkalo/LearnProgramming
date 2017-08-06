@@ -1,5 +1,5 @@
 ;
-function init_services_list(){
+function init_service_list(){
 
     var Car_parts = {
         engine:         { name: "Двигатель",        price_factor: 100},
