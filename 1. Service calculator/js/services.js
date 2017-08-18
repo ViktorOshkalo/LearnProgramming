@@ -29,7 +29,7 @@ function init_service_list(){
 
     Service = function (car_part, category){
         this.id = counter();
-        this.name = car_part.name;
+        this.car_part = car_part.name;
         this.category = category.name;
         this.price = car_part.price_factor * category.price_factor;
     }

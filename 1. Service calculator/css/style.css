@@ -1,0 +1,23 @@
+body {
+    background-color: rgb(32, 32, 32);
+    color: darkkhaki;
+}
+
+.service-lot {
+    background-color: darkgreen;
+    height: 100px;
+    width: 100px;
+    border: 5px dashed yellowgreen;
+    margin: 5px;
+    text-align: center;
+}
+
+.total-price {
+    background-color: darkmagenta;
+    height: 100px;
+    width: 100px;
+    border: 5px dashed orangered;
+    margin: 5px;
+    text-align: center;
+    vertical-align: middle;
+}
