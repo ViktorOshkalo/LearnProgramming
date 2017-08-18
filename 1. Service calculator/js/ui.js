@@ -8,6 +8,7 @@ function render_shop(services_list, shopping_cart){
     total_price_div.innerHTML = shopping_cart.total_price    
 
     var service_list_div = document.createElement("div")
+    service_list_div.setAttribute("class", "container")
 
     services_list.forEach(function(service) {
         var services_list_lot = document.createElement("div")
@@ -20,9 +21,13 @@ function render_shop(services_list, shopping_cart){
         category.innerHTML = service.category
 
         var price = document.createElement("div")
-        price.innerHTML = service.price        
+        price.innerHTML = service.price    
+        
+        var amount = document.createElement("div")  
+        amount.setAttribute("class", "amount")
 
         var adding = document.createElement("div")
+        adding.setAttribute("class", "adding")
         var add_button = document.createElement("button")
         var delete_button = document.createElement("button")
         
@@ -32,6 +37,7 @@ function render_shop(services_list, shopping_cart){
         add_button.addEventListener( "click",  function() {
             shopping_cart.add(service.id, 1, service.price)
             total_price_div.innerHTML = shopping_cart.total_price
+            amount.innerHTML = shopping_cart[service.id]
             console.log(shopping_cart)
         })
         
@@ -41,6 +47,11 @@ function render_shop(services_list, shopping_cart){
         delete_button.addEventListener( "click",  function() {
             shopping_cart.delete(service.id, 1, service.price)
             total_price_div.innerHTML = shopping_cart.total_price
+            if (shopping_cart.hasOwnProperty(service.id)) {
+                amount.innerHTML = shopping_cart[service.id]
+            } else {
+                amount.innerHTML = ""
+            }
             console.log(shopping_cart)
         })
 
@@ -51,6 +62,7 @@ function render_shop(services_list, shopping_cart){
         services_list_lot.appendChild(car_part)
         services_list_lot.appendChild(category)
         services_list_lot.appendChild(price)
+        services_list_lot.appendChild(amount)
         services_list_lot.appendChild(adding)
 
         service_list_div.appendChild(services_list_lot)
