@@ -88,15 +88,12 @@ const render_cart = function(container) {
         lots.setAttribute("class", "lots");
         ele_category.appendChild(lots);        
 
-        //let lots = UI_State.shopping_cart.filter(function(ele) { return UI_State.service_list[ele].category === category; });
-        //console.log(lots);
-
         list.appendChild(ele_category);
     });
 
     let cart_lot;
     for (cart_lot in  UI_State.shopping_cart) {
-        //console.log(cart_lot);
+
         let service = UI_State.shopping_cart.getServiceById(cart_lot);
         let lots_element = list.querySelector(`li[type=${service.category}] ul[class=lots]`);
         
@@ -139,9 +136,7 @@ const render_cart = function(container) {
     total_price.appendChild(total_price_mark);
     container.appendChild(total_price);
 
-
     UI_elements.content.appendChild(container);
-    //return container;
 }
 
 let render_service_lot = function(container, service) {
@@ -170,7 +165,6 @@ let render_service_lot = function(container, service) {
         add_button.setAttribute("func", "add_service");
         add_button.addEventListener( "click",  function() {
             UI_State.shopping_cart.add(service.id, 1, service.price);
-            // total_price_div.innerHTML = shopping_cart.total_price;
             amount.innerHTML = UI_State.shopping_cart[service.id];
             render_cart(UI_elements.cart);
         })
@@ -180,7 +174,6 @@ let render_service_lot = function(container, service) {
         delete_button.setAttribute("func", "delete_service");
         delete_button.addEventListener( "click",  function() {
             UI_State.shopping_cart.delete(service.id, 1, service.price);
-            // total_price_div.innerHTML = shopping_cart.total_price;
             if (UI_State.shopping_cart.hasOwnProperty(service.id)) {
                 amount.innerHTML = UI_State.shopping_cart[service.id];
             } else {
