@@ -25,10 +25,6 @@ const UI_elements = {
         element.setAttribute("class", class_name);
         element.innerHTML = inner_html;
         return element;
-    },
-
-    element_render: function(element_name, render_cb) {
-        render_cb();
     }
 }
 
@@ -36,7 +32,6 @@ const render_ui = function(services_list, shopping_cart){
 
     UI_State.state_init(services_list, shopping_cart);
 
-    //let root = document.getElementById("car-service-app");
     UI_elements.elements_init();
     render_header(UI_elements.root);
     render_content(UI_elements.root);
@@ -51,7 +46,7 @@ const render_content = function(container) {
     const content = UI_elements.content
     render_filter_menu(content);
     render_service_list(content, render_service_lot);
-    render_cart();
+    render_cart(UI_elements.cart);
     container.appendChild(content);
 }
 
@@ -69,9 +64,8 @@ const render_service_list = function(container, render_func) {
     container.appendChild(service_list_container);
 }
 
-const render_cart = function() {
-    const container = UI_elements.cart;
-    while (container.firstChild) {      // clean inner tags
+const render_cart = function(container) {
+    while (container.firstChild) {      // remove inner tags
         container.firstChild.remove();
     }
 
@@ -178,7 +172,7 @@ let render_service_lot = function(container, service) {
             UI_State.shopping_cart.add(service.id, 1, service.price);
             // total_price_div.innerHTML = shopping_cart.total_price;
             amount.innerHTML = UI_State.shopping_cart[service.id];
-            UI_elements.element_render("cart", render_cart);
+            render_cart(UI_elements.cart);
         })
         
         delete_button.innerHTML = "-";
@@ -192,7 +186,7 @@ let render_service_lot = function(container, service) {
             } else {
                 amount.innerHTML = "";
             }
-            UI_elements.element_render("cart", render_cart);
+            render_cart(UI_elements.cart);
         })
 
         adding.appendChild(add_button);
