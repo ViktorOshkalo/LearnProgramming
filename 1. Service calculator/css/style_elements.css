@@ -1,0 +1,134 @@
+
+.header {
+    background-color: dodgerblue;
+    color: white;
+    height: 10%;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100%;
+    font-size: 60px;
+    margin: 2px; 
+    margin-right: 0px;
+    min-width: 200px;
+    font: 40px/1.5 Arial; 
+}
+
+.content {
+    width: 100%;
+    /* height: 800px; */
+}
+
+.content div {
+    float: left;
+    /* text-align: center; */
+}
+
+.content .filter_menu {
+    background-color: white;
+    color: black;
+    width: 200px;
+    max-width: 200px;
+    /* height: 80%; */
+    margin: 2px; 
+}
+
+.content .service_list {
+    background-color: white;
+    color: black;
+    width:  calc(100% - 560px);
+    min-width: 200px;
+    margin: 2px; 
+    padding-left: 50px;
+    /* height: 80%; */
+}
+
+.content .cart {
+    background-color: white;
+    color: black;
+    width: 300px;
+    height: 100%; 
+    margin: 2px; 
+    margin-right: 0px;
+}
+
+.content .service_list .service_lot {
+    background-color: seashell;
+    height: 140px;
+    width: 120px;
+    border: 5px dashed lightblue;
+    margin: 5px;
+    text-align: center;
+    min-width: 100px;
+    position: relative;
+    font: 14px/1.5 Arial; 
+}
+
+.content .service_list .service_lot div {
+    text-align: center; 
+    float: none;
+}
+
+.content .service_list .service_lot .amount {
+    font: 40px/1.5 Verdana;  
+    color: black;
+    position: absolute;
+    bottom: 0;
+    margin-left: 40%; 
+    margin-bottom: 15px;    
+}
+
+.content .service_list .service_lot .adding {
+    position: absolute;
+    bottom: 0;
+    margin-left: 30%; 
+}
+
+.cart_list .category {
+    line-height: auto;
+    overflow: auto; 
+}
+
+.lots .lot {
+    overflow: auto;
+}
+
+.lots .lot .cart_part_name {
+    color:blue;
+    max-width: 100px;
+}
+
+.lots .lot .cart_lot_amount {
+    color:red;
+    float: right;
+    margin-right: 20px;
+}
+
+.lots .lot .cart_lot_price {
+    color:darkgreen;
+    float: right;
+    margin-right: 10px;
+    width: 50px;
+}
+
+.cart .total_price {
+    margin: 0;
+    padding: 0;
+    color: blue;
+    float: right;
+}
+
+.cart .total_price .total_price_mark {
+    float: right;
+    color: red;
+    width: auto;
+    margin-right: 95px;
+    
+}
+
+.cart .total_price .total_price_amount {
+    color: red;
+    float: right;
+    width: 30px;
+    margin-right: 30px;
+    
+}

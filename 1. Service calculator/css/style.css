@@ -7,6 +7,7 @@ body {
     width: 40%;
     margin: 30px auto;
     overflow: hidden;
+    float: left;
 }
 
 .service-lot {
@@ -21,26 +22,9 @@ body {
     position: relative;
 }
 
-.total-price {
-    background-color: darkmagenta;
-    height: 100px;
-    width: 100px;
-    border: 5px dashed orangered;
-    margin: 5px;
-    text-align: center;
-    vertical-align: middle;
-    width: 40%;
-    margin: 30px auto; 
-    font: 40px/1.5 Verdana;   
-}
-
 .service-lot .adding {
     position: absolute;
     bottom: 0;
     margin-left: 30%; 
 }
 
-.amount {
-    font: 40px/1.5 Verdana;  
-    color: gold;
-}
